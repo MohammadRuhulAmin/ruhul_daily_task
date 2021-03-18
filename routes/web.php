@@ -18,7 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/tutioni',[TutionController::class,'index']);
 Route::post('/tutioni/store/',[TutionController::class,'store']);
 Route::get('/tutioni/all/',[TutionController::class,'alltutionilist']);
 Route::post('/tutioni/delete/{id}',[TutionController::class,'deleteTutioni']);
+Route::get('/tutioni/edit/{id}',[TutionController::class,'edit']);
+Route::post('/tutioni/update/{student_id}',[TutionController::class,'update']);

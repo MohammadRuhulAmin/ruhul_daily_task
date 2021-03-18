@@ -12,13 +12,18 @@
     
     <div class="jumbotron">
         <h3>Register a New Tutioni</h3>
-        <div>
+        {{-- <div>
             <button class="btn btn-danger btn-lg" id="tution_register_btn" >Register Now</button>
-        </div>
+        </div> --}}
     </div>
     <div class="jumbotron" id="tution_register_form">
         <form id="tutionForm">
             @csrf
+            <div>
+
+                <input type="hidden" class="form-control" name="student_id" id="student_id">
+            </div>
+            <hr>
             <div>
                 <label class="form-control">Student Name</label>
                 <input type="text" class="form-control" name="Student_name" id="student_name">
@@ -66,7 +71,9 @@
             </div>
             <hr>
             <div>
-                <button id="register_student_confirm" class="btn btn-primary btn-lg">Register Student</button>
+                <button id="register_student_confirm" class="btn btn-primary btn-lg">Register Tution</button>
+                <button id="register_student_confirm_update" class="btn btn-success btn-lg">Update Tution</button>
+           
             </div>
 
         </form>
