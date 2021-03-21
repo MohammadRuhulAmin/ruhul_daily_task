@@ -34,8 +34,10 @@
     <br>
     <div class="container">
         <h3>Task List </h3>
+        <button id="selected_task_btn_delete" class="btn btn-danger btn-sm">Delete Selected Tasks </button>
         <table class="table">
             <thead>
+                <td><button id="selectBoxs" class="btn btn-warning btn-sm">Select</button></td>
                 <td>#</td>
                 <td>Task Title</td>
                 <td>Description</td>

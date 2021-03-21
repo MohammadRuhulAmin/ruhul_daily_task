@@ -5,6 +5,8 @@ $.ajaxSetup({
 });
 
 $('#update_task_btn').hide();
+$('#selected_task_btn_delete').hide();
+
 //################################ show all task ######################
 function allTaskShow(){
     $.ajax({
@@ -16,6 +18,7 @@ function allTaskShow(){
             var taskList = "";
             for(let i = 0;i<response.length;i++){
                 taskList +="<tr>"+
+                  "<td>" +"<input type='checkbox' id='check_box_selector'  class='form-control' name='task_selector'  value='"+response[i].id+"'>"+"</td>"+
                   "<td>" +response[i].id+"</td>"+
                   "<td>" +response[i].task_title+"</td>"+
                   "<td>" +response[i].task_description+"</td>"+
@@ -152,3 +155,49 @@ $('#update_task_btn').click(function(e){
         }
     });
 });
+
+//###################################################################### 
+
+//######################## Task Group Delete #############################
+
+
+
+  
+$('#selected_task_btn_delete').click(function(e){
+    e.preventDefault();
+    var tasksList = $('input[name="task_selector"]:checked');
+    var deleteListId = new Array();
+    
+    tasksList.each(function(){
+        deleteListId.push($(this).val());
+    });
+    var deleteItems = {
+        deleteListId:deleteListId,
+    }
+    console.log(deleteListId);
+    $.ajax({
+        url:'/task/group/delete/',
+        type:"POST",
+        dataType:'json',
+        data:deleteItems,
+        success:function(response){
+            console.log(response);
+            allTaskShow();
+            $('#selected_task_btn_delete').hide();
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
+    
+});
+
+//################################################# 
+//####################Task select to delete button option on off ################## 
+
+
+
+$('#selectBoxs').click(function(e){
+    e.preventDefault();
+    $('#selected_task_btn_delete').show();
+})

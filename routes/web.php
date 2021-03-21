@@ -40,4 +40,5 @@ Route::post('/task/store/',[TaskController::class,'store']);
 Route::post('/task/delete/{id}',[TaskController::class,'deleteTask']);
 Route::get('/task/edit/{id}',[TaskController::class,'editTask']);
 Route::post('/task/update/{task_id}',[TaskController::class,'updateTask']);
+Route::post('/task/group/delete/',[TaskController::class,'taskGroupDelete']);
 //########################################################################

@@ -41,4 +41,13 @@ class TaskController extends Controller
         $task->save();
         return response()->json($task);
     }
+    public function taskGroupDelete(Request $request){
+        $itemsToDelete =  $request->deleteListId;
+        foreach($itemsToDelete as $task_id ){
+            $task = Task::find($task_id);
+            $task->delete();
+        }
+        $message = "Tasks are deleted successfully!";
+        return response()->json($message);
+    }
 }

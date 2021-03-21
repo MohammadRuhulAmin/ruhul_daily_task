@@ -72,6 +72,7 @@ function allTutionInformation(){
 			let result = "";
 			for(let i = 0;i<response.length;i++){
 				result +="<tr>"+
+				"<td>"+"<input type='radio' class='form-control'>"+"</td>"+
 				"<td>"+response[i].id +"</td>"+
 				"<td>"+response[i].student_name +"</td>"+
 				"<td>"+response[i].student_contact +"</td>"+
