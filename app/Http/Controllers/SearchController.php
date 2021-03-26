@@ -10,7 +10,8 @@ class SearchController extends Controller
         $defaultMsg = "Not Found";
         if($request->has('dataQuery')){
             $query = $request->dataQuery;
-            $result = Task::where('task_title','like','%'.$query.'%')->get();
+            $result = Task::where('task_title','like','%'.$query.'%')
+            ->orWhere('task_description','like','%'.$query.'%')->get();
             return response()->json($result);
         }
         else return $defaultMsg;

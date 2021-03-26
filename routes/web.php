@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Task\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +21,7 @@ use App\Http\Controllers\Tution\TutionController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 //########################## Tutioni ##################################
 
@@ -47,11 +49,29 @@ Route::post('/task/update/{task_id}',[TaskController::class,'updateTask']);
 Route::post('/task/group/delete/',[TaskController::class,'taskGroupDelete']);
 
 
+ 
 //########################################################################
 
 
-//###############################Search Task#################################
+//############################### Search Task #################################
+
 
 Route::get('/task/search/items/',[SearchController::class,'searchItem']);
 
+
+
 //##########################################################################
+
+
+
+//################################# Information ############################
+
+
+Route::get('/information/',[InformationController::class,'index']);
+Route::get('/student/email/',[InformationController::class,'studentEmailValidation']);
+
+//##########################################################################
+
+
+
+

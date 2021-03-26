@@ -7,7 +7,9 @@ $.ajaxSetup({
 $('#update_task_btn').hide();
 $('#selected_task_btn_delete').hide();
 
+
 //################################ show all task ######################
+
 function allTaskShow(){
     $.ajax({
         url:'/task/all/',

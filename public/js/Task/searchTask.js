@@ -29,12 +29,13 @@ $('#searchItem').on('keyup',function(){
                 if(response.length ==0){
                     $('#tbody_result').html("<h3>"+"No Data Found"+"</h3>");
                 }
-                
             },
+
             error:function(error){
+
                 $('#errorMsg').html("<h3>"+error+"</h3>")
+
             }
         })
     }
-
 });
