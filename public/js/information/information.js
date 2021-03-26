@@ -1,5 +1,6 @@
 $.ajaxSetup({
     headers:{
+
         'X-CSRF-TOKEN':$('meta[name="csrf-token"]').attr('content')
     }
 });
@@ -24,6 +25,8 @@ $('#student_email').on('keyup',function(){
                         $('#student_email_msg').html("<h4 class='alert alert-success'>"+"Mail Is Available"+"</h4>");
                     }
                 }
+                $('#student_email_msg').html("<h4 class='alert alert-success'>"+"Mail Is Available"+"</h4>");
+
             }
         });
     }
