@@ -12,6 +12,24 @@
     <div class="container">
         <div class="jumbotron">
             <h3>Ruhul's Task : </h3>
+            <div id="search-box">
+                <input  type="text" class="form-control"   id="searchItem">
+            </div>
+            <div id="errorMsg"></div>
+            <div id="search-result">
+                <table class="table">
+                    <thead>
+                        <td>#</td>
+                        <td>Title</td>
+                        <td>Task Description</td>
+                        
+                    </thead>
+                    <tbody id="tbody_result">
+                        
+                    </tbody>
+
+                </table>
+            </div>
         </div>
         <div>
             <form id="taskForm">
@@ -61,5 +79,6 @@
    <script src="js/bootstrap.js"></script>
    <script src="js/popper.js"></script>
    <script src="{{asset('js/Task/task.js')}}"></script>
+   <script src="{{asset('js/Task/searchTask.js')}}"></script>
 </body>
 </html>

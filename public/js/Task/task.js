@@ -158,11 +158,9 @@ $('#update_task_btn').click(function(e){
 
 //###################################################################### 
 
+
 //######################## Task Group Delete #############################
 
-
-
-  
 $('#selected_task_btn_delete').click(function(e){
     e.preventDefault();
     var tasksList = $('input[name="task_selector"]:checked');
@@ -200,4 +198,5 @@ $('#selected_task_btn_delete').click(function(e){
 $('#selectBoxs').click(function(e){
     e.preventDefault();
     $('#selected_task_btn_delete').show();
-})
+});
+
